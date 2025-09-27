@@ -1,6 +1,14 @@
-import Pessoa from "./entities/Pessoa.js";
+import express, { Application, Request, Response } from 'express';
 
-const pessoa: Pessoa = new Pessoa("Leonardo");
-console.log(pessoa.getNome());
-pessoa.setNome("Miguel");
-console.log(pessoa.getNome());
+const app: Application = express();
+const port: number = 3000;
+
+app.use(express.json());
+
+app.get('/health', (req: Request, res: Response) => {
+    res.json({ message: 'Olá mundo!' });
+});
+
+app.listen(port, () =>
+    console.log(`Server running on http://localhost:${port}/health`)
+);
