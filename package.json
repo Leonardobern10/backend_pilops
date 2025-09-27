@@ -1,29 +1,30 @@
 {
-  "name": "backend_pilops",
-  "version": "1.0.0",
-  "description": "API REST que serve dados do histórico de vôos dos clientes.",
-  "main": "index.js",
-  "scripts": {
-    "start": "node dist/index.js",
-    "dev": "tsx src/index.ts",
-    "build": "tsc"
-  },
-  "keywords": [
-    "flight",
-    "voos",
-    "pilops"
-  ],
-  "author": "Leonardo Bernardo",
-  "license": "ISC",
-  "type": "module",
-  "devDependencies": {
-    "@types/express": "^5.0.3",
-    "@types/node": "^24.5.2",
-    "prettier": "^3.6.2",
-    "tsx": "^4.20.6",
-    "typescript": "^5.9.2"
-  },
-  "dependencies": {
-    "express": "^5.1.0"
-  }
+    "name": "backend_pilops",
+    "version": "1.0.0",
+    "description": "API REST que serve dados do histórico de vôos dos clientes.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node dist/index.js",
+        "dev": "tsx src/index.ts",
+        "build": "tsc",
+        "format": "npx prettier . --write"
+    },
+    "keywords": [
+        "flight",
+        "voos",
+        "pilops"
+    ],
+    "author": "Leonardo Bernardo",
+    "license": "ISC",
+    "type": "module",
+    "devDependencies": {
+        "@types/express": "^5.0.3",
+        "@types/node": "^24.5.2",
+        "prettier": "^3.6.2",
+        "tsx": "^4.20.6",
+        "typescript": "^5.9.2"
+    },
+    "dependencies": {
+        "express": "^5.1.0"
+    }
 }
