@@ -1,4 +1,4 @@
-import FlightInterface from '../interfaces/FlightInterface';
+import FlightInterface from '../interfaces/FlightInterface.js';
 
 export const flights: Array<FlightInterface> = [
     {

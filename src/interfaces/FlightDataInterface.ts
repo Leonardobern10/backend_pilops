@@ -1,4 +1,4 @@
-import RouteInterface from './RouteInterface';
+import RouteInterface from './RouteInterface.js';
 
 /**
  * Define o formato para FlightData

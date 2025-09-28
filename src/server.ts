@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import app from './app/app';
+import app from './app/app.js';
 
 // Numero de porta obtido de env
 const port: string = process.env.PORT!;

@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express';
-import { flights } from '../data/historyFlights';
+import { flights } from '../data/historyFlights.js';
 
 /**
  * Router responsável por gerenciar as rotas direcionadas para `/flights`

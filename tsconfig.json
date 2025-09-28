@@ -1,14 +1,18 @@
 {
     "compilerOptions": {
         "target": "es2022",
-        "module": "es2022",
-        "moduleResolution": "node",
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
         "outDir": "./dist",
         "rootDir": "./src",
         "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": ".",
+        "paths": {
+            "*": ["src/*"]
+        }
     },
     "include": ["src/**/*"], // Inclui todos os arquivos TypeScript dentro da pasta "src".
     "exclude": ["node_modules", "dist"] // Exclui as pastas "node_modules" e "dist" do processo de compilação.

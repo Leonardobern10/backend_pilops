@@ -1,5 +1,5 @@
-import AircraftInterface from './AircraftInterface';
-import FlightDataInterface from './FlightDataInterface';
+import AircraftInterface from './AircraftInterface.js';
+import FlightDataInterface from './FlightDataInterface.js';
 
 /**
  * Define o formato para Flight
