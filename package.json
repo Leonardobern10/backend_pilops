@@ -4,10 +4,11 @@
     "description": "API REST que serve dados do histórico de vôos dos clientes.",
     "main": "index.js",
     "scripts": {
-        "start": "node dist/index.js",
-        "dev": "tsx src/index.ts",
+        "start": "node dist/server.js",
+        "dev": "tsx src/server.ts",
         "build": "tsc",
-        "format": "npx prettier . --write"
+        "format": "npx prettier . --write",
+        "test": "vitest"
     },
     "keywords": [
         "flight",
