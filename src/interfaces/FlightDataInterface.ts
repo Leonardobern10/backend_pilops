@@ -1,5 +1,8 @@
 import RouteInterface from './RouteInterface';
 
+/**
+ * Define o formato para FlightData
+ */
 export default interface FlightDataInterface {
     date: string;
     balance: number;
