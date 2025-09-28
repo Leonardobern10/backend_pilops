@@ -1,18 +1,22 @@
 import express, { Application, Request, Response } from 'express';
-import { flights } from './data/historyFlights';
 import flightRouter from './routes/flights.route';
+import 'dotenv/config';
 
 const app: Application = express();
-const port: number = 3000;
-const baseUrl: string = '/api/v1';
+const port: string = process.env.PORT!;
+const baseUrl: string = process.env.BASE_URL!;
 
 app.use(express.json());
 app.use(`${baseUrl}/flights`, flightRouter);
 
-app.get(`${baseUrl}/`, (req: Request, res: Response) => {
-    res.json({ message: 'Servidor rodando...' });
-});
+app.get(
+    `${baseUrl}/`,
+    async (req: Request, res: Response): Promise<Response> => {
+        return res.json({ message: 'Servidor rodando...' });
+    }
+);
 
-app.listen(port, () =>
+// Inicializa o servidor e o disponibiliza na porta definida
+app.listen(port, async () =>
     console.log(`Server running on http://localhost:${port}${baseUrl}/`)
 );
