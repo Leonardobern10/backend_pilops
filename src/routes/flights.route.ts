@@ -1,5 +1,5 @@
+import { flights } from 'data/historyFlights.js';
 import { Request, Response, Router } from 'express';
-import { flights } from '../data/historyFlights.js';
 
 /**
  * Router responsável por gerenciar as rotas direcionadas para `/flights`
@@ -12,7 +12,31 @@ const flightRouter: Router = Router();
  * @returns{JSON} - Retorna todos os registros do historico de voos
  */
 flightRouter.get('/', async (req: Request, res: Response) => {
-    res.json({ flights: flights });
+    // Começa na pagina especificada na query params ou na 1,
+    // caso ela nao seja fornecida.
+    const page: number = parseInt(req.query.page as string) || 1;
+    // Envia um limite de registros fornecidos pelo usuário, ou
+    // 10 se nada tiver sido fornecido.
+    const limit: number = parseInt(req.query.limit as string) || 10;
+
+    // Como a primeira pagina corresponde à pagina 0,
+    // aqui tratamos e garantimos ao usuario que ele visualize
+    // o que de fato deseja
+    const start: number = (page - 1) * limit;
+    const end: number = page * limit;
+
+    // Aqui pegamos um pedaço do array, começando em
+    // `start` e terminando em `end`
+    const historyFlights = flights.slice(start, end);
+
+    // Aqui montados o JSON estruturando as respostas
+    res.json({
+        page, // Exibe a pagina atual
+        limit, // Exibe a quantidade de dados buscados
+        total: flights.length, // Exibe o total de dados disponiveis
+        totalPages: Math.ceil(flights.length / limit), // Calcula e exibe o total de paginas
+        flights: historyFlights // Exibe os dados buscados
+    });
 });
 
 /**

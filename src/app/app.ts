@@ -19,13 +19,13 @@ app.use(
 app.use(express.json());
 
 // rota principal para historico de vôos
-app.use(`${baseUrl}/flight`, flightRouter);
+app.use(`${baseUrl}/flights`, flightRouter);
 
 // rota de teste
 app.get(
     `${baseUrl}/`,
     async (req: Request, res: Response): Promise<Response> => {
-        return res.json({ message: 'Servidor rodando...' });
+        return res.status(200).json({ message: 'Servidor online...' });
     }
 );
 
