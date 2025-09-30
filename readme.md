@@ -13,3 +13,8 @@ O express é um framework para geração de servidor com node. Ele ao mesmo temp
 A escolha reflete uma necessidade de melhor controle no que diz respeito ao formato em que os dados podem apresentar e funcionalidades que eles podem ter. Isso restringe possiveis alterações em seu formato, além de melhor antender casos onde eles podem se expandir, tanto em propriedades quando em metodos.
 
 - Sugestão: Além disso, a utilização de classes permite a aplicação **DIP - Princípio da Inversão de Dependência (SOLID)** que garante facilidade na alteração do codigo já existente, desde que atenda aos requisitos impostos pela abstração ao qual deverá implementar.
+
+### Por que utilizar cors?
+Ele permite receber requisições de outra aplicação à nossa api e ainda especificar quem pode acessar nossos dados e quais os metodos HTTP permitido.
+
+- OBS: Em nosso caso, permitimos apenas GET e restringimos os demais.
