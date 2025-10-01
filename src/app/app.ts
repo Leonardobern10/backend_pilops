@@ -8,16 +8,16 @@ const app: Application = express();
 // Path padrão obtido de env
 const client: string = process.env.CLIENT_URL || 'http://localhost:5173';
 
-// Definição do cors para permitir que uma aplicação externa faça a consulta dos dados
-app.use(cors({ origin: client, methods: ['GET'] }));
-
-// Define que o formato utlizado será JSON
-app.use(express.json());
-
 // Informa caso a variável não seja definida
 if (!process.env.CLIENT_URL) {
     throw new Error('CLIENT_URL não definido nas variáveis de ambiente');
 }
+
+// Define que o formato utlizado será JSON
+app.use(express.json());
+
+// Definição do cors para permitir que uma aplicação externa faça a consulta dos dados
+app.use(cors({ origin: client, methods: ['GET'] }));
 
 // rota principal para historico de vôos
 app.use('/flights', flightRouter);
