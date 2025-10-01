@@ -19,12 +19,12 @@ app.use(express.json());
 // Definição do cors para permitir que uma aplicação externa faça a consulta dos dados
 app.use(cors({ origin: client, methods: ['GET'] }));
 
-// rota principal para historico de vôos
-app.use('/flights', flightRouter);
-
 // rota de teste
 app.get(`/`, async (req: Request, res: Response): Promise<Response> => {
     return res.status(200).json({ message: 'Servidor online...' });
 });
+
+// rota principal para historico de vôos
+app.use('/flights', flightRouter);
 
 export default app;

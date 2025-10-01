@@ -1,4 +1,4 @@
-import { flights } from 'data/historyFlights.js';
+import { flights } from '../data/historyFlights.js';
 import { Request, Response, Router } from 'express';
 
 /**
