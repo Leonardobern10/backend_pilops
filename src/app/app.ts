@@ -10,7 +10,7 @@ const baseUrl: string = process.env.BASE_URL!;
 // Definição do cors para permitir que uma aplicação externa faça a consulta dos dados
 app.use(
     cors({
-        origin: 'http://localhost:5173',
+        origin: process.env.CLIENT_URL!,
         methods: ['GET']
     })
 );
