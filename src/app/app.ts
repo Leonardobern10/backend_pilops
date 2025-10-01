@@ -20,7 +20,7 @@ if (!process.env.CLIENT_URL) {
 }
 
 // rota principal para historico de vôos
-app.use(`/flights`, flightRouter);
+app.use('/flights', flightRouter);
 
 // rota de teste
 app.get(`/`, async (req: Request, res: Response): Promise<Response> => {
