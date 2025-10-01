@@ -5,13 +5,13 @@ import cors from 'cors';
 // Inicializa uma applicação express
 const app: Application = express();
 
-// Path padrão obtido de env
-const client: string = process.env.CLIENT_URL || 'http://localhost:5173';
-
 // Informa caso a variável não seja definida
 if (!process.env.CLIENT_URL) {
     throw new Error('CLIENT_URL não definido nas variáveis de ambiente');
 }
+
+// Path padrão obtido de env
+const client: string = process.env.CLIENT_URL;
 
 // Define que o formato utlizado será JSON
 app.use(express.json());
