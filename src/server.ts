@@ -8,5 +8,5 @@ const url: string = process.env.BASE_URL!;
 
 // Inicia o servidor na porta informada
 app.listen(port, async () =>
-    console.log(`Server running on http://localhost:${port}/flights`)
+    console.log(`Server running on ${process.env.BASE_URL}/flights`)
 );

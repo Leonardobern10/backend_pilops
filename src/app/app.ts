@@ -5,7 +5,6 @@ import cors from 'cors';
 // Inicializa uma applicação express
 const app: Application = express();
 // Path padrão obtido de env
-const baseUrl: string = process.env.BASE_URL!;
 const client: string = process.env.CLIENT_URL || 'http://localhost:5173';
 
 // Definição do cors para permitir que uma aplicação externa faça a consulta dos dados
