@@ -7,6 +7,4 @@ const port: string = process.env.PORT || '3000';
 const url: string = process.env.BASE_URL!;
 
 // Inicia o servidor na porta informada
-app.listen(port, async () =>
-    console.log(`Server running on ${process.env.BASE_URL}/flights`)
-);
+app.listen(port);

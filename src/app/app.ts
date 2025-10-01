@@ -4,6 +4,7 @@ import cors from 'cors';
 
 // Inicializa uma applicação express
 const app: Application = express();
+
 // Path padrão obtido de env
 const client: string = process.env.CLIENT_URL || 'http://localhost:5173';
 
