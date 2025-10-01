@@ -16,7 +16,7 @@ if (!process.env.CLIENT_URL) {
 
 // rota principal para historico de vôos
 app.use(
-    `/flights`,
+    `flights`,
     cors({
         origin: process.env.CLIENT_URL,
         methods: ['GET']
