@@ -1,3 +1,4 @@
+import { checkParam } from 'validations/paramsValidation.js';
 import { flights } from '../data/historyFlights.js';
 import { Request, Response, Router } from 'express';
 
@@ -14,10 +15,10 @@ const flightRouter: Router = Router();
 flightRouter.get('/', async (req: Request, res: Response) => {
     // Começa na pagina especificada na query params ou na 1,
     // caso ela nao seja fornecida.
-    const page: number = parseInt(req.query.page as string) || 1;
+    const page: number = checkParam(req.query.page, 1);
     // Envia um limite de registros fornecidos pelo usuário, ou
     // 10 se nada tiver sido fornecido.
-    const limit: number = parseInt(req.query.limit as string) || 10;
+    const limit: number = checkParam(req.query.limit, 10);
 
     // Como a primeira pagina corresponde à pagina 0,
     // aqui tratamos e garantimos ao usuario que ele visualize
@@ -52,11 +53,13 @@ flightRouter.get(
         if (id) {
             const currentFlight = flights.filter((el) => el.id === id);
             if (currentFlight.length > 0) {
-                return res.json({ flight: currentFlight });
+                return res.status(200).json({ flight: currentFlight });
             }
-            return res.json({ error: 'Error on search this flight.' });
+            return res
+                .status(404)
+                .json({ error: 'Error on search this flight.' });
         }
-        return res.json({ error: 'Error to get id flight.' });
+        return res.status(400).json({ error: 'Error to get id flight.' });
     }
 );
 
