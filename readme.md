@@ -18,3 +18,28 @@ A escolha reflete uma necessidade de melhor controle no que diz respeito ao form
 Ele permite receber requisições de outra aplicação à nossa api e ainda especificar quem pode acessar nossos dados e quais os metodos HTTP permitido.
 
 - OBS: Em nosso caso, permitimos apenas GET e restringimos os demais.
+
+### Porque utilizar o paradigma atual?
+O projeto do back-end ainda é muito simples, embora funcional, logo uma abordagem mais simplificada justifica o nivel de complexidade do projeto. Em caso de evolução e aumento de complexidade, utilizar a abordagem orientada a objetos seria mais adequada, com uma separação mais forte em camadas e responsabilidades. Segue um esboço:
+
+```
+|- src/
+   |- app/
+     |-- Application.ts // Classe da aplicação, utiliza middlwares e define routers
+   |-- services/
+     |-- FlightService.ts // Funções que chamam metodo de repository e enviam para controller
+   |-- router/
+     |-- FlightRouter.ts // Manipuladores de rotas definidos na aplicação (para gerenciar /fligths)
+   |-- controller/
+     |-- FlightController.ts // Manipuladores de requisição que interpretam e retornam req/res.
+   |-- server/
+     |-- Server.ts // Cuida do servidor, inicia, define porta, etc.
+   |-- repository/
+     |-- FlightRepository.ts // Função que interagem diretamento com o banco de dados
+   |-- domain
+     |-- interfaces/ // Interfaces
+     |-- types/ // Tipos declarados
+     |-- entities/ // Registros do banco de dados
+   |-- config/
+     |-- db.ts // Conexão com o banco de dados
+```
