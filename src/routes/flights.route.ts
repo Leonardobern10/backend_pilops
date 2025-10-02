@@ -1,6 +1,8 @@
 import { checkParam } from '../validations/paramsValidation.js';
 import { flights } from '../data/historyFlights.js';
 import { Request, Response, Router } from 'express';
+import { getScore } from 'services/flights.service.js';
+import { error } from 'console';
 
 /**
  * Router responsável por gerenciar as rotas direcionadas para `/flights`
@@ -39,6 +41,13 @@ flightRouter.get('/', async (req: Request, res: Response) => {
         flights: historyFlights // Exibe os dados buscados
     });
 });
+
+flightRouter.get(
+    '/score',
+    async (req: Request, res: Response): Promise<Response> => {
+        return res.status(200).json(await getScore());
+    }
+);
 
 /**
  * Rota que retorna os detalhes de um vôo específico
