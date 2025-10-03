@@ -20,11 +20,14 @@ npm install
 ```
 
 4. Definir as variáveis de ambiente
+
 ```shell
 PORT=3000
 CLIENT_URL=http://localhost:5173
 BASE_URL=/
 ```
+
+*Criar um arquivo `.env` na raiz do projeto com as variáveis definidas acima*
 
 5. Executar a aplicação
 ```shell
