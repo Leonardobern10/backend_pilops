@@ -47,7 +47,6 @@ flightRouter.get(
         console.log('Rota /score acionada');
         try {
             let score = await getScore();
-            console.log(score);
             return res.status(200).json({ ...score });
         } catch (error) {
             return res.status(500).json({ error: 'Erro on get score' + error });

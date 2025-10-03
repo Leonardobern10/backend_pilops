@@ -4,8 +4,6 @@ import { ScoreResponse } from '../interfaces/ScoreReponse.js';
 
 export const getScore = async (): Promise<ScoreResponse> => {
     let currentFlights = flights;
-    console.log(flights);
-    console.log(currentFlights);
     return {
         balance: currentFlights
             .reduce((total, valor) => total + valor.flightData.balance, 0)
