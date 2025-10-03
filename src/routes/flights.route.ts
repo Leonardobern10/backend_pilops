@@ -1,8 +1,7 @@
 import { checkParam } from '../validations/paramsValidation.js';
 import { flights } from '../data/historyFlights.js';
 import { Request, Response, Router } from 'express';
-import { getScore } from 'services/flights.service.js';
-import { error } from 'console';
+import { getScore } from '../services/flights.service.js';
 
 /**
  * Router responsável por gerenciar as rotas direcionadas para `/flights`
@@ -45,7 +44,14 @@ flightRouter.get('/', async (req: Request, res: Response) => {
 flightRouter.get(
     '/score',
     async (req: Request, res: Response): Promise<Response> => {
-        return res.status(200).json(await getScore());
+        console.log('Rota /score acionada');
+        try {
+            let score = await getScore();
+            console.log(score);
+            return res.status(200).json({ ...score });
+        } catch (error) {
+            return res.status(500).json({ error: 'Erro on get score' + error });
+        }
     }
 );
 
