@@ -3,7 +3,29 @@ Esse proejeto consiste no backend da aplicação correspondente ao desafio propo
 
 Aqui estarão, além da disponibilização do próprio backend em si, algumas das decisões técnicas tomadas durante a codificação do projeto.
 
-## Como inicar o projeto
+Api rodando em: https://backend-pilops.onrender.com/
+
+![](https://img.shields.io/badge/Node.js-5FA04E.svg?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
+![](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black)
+![](https://img.shields.io/badge/Vitest-6E9F18.svg?style=for-the-badge&logo=Vitest&logoColor=white)
+![](https://img.shields.io/badge/Prettier-F7B93E.svg?style=for-the-badge&logo=Prettier&logoColor=black)
+![](https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=white)
+
+## Tecnologias utilizadas
+- `Nodejs` - Ambiente de execução Javascript no servidor.
+- `Typescript` - Tipagem estática para Javascript.
+- `Prettier` - Padronização de formatação de código.
+- `Vitest` - Criação de testes unitários.
+- `Express` - Framework para criação de servidores de forma simples mas robusta
+
+## Sumário
+1. [Como rodar o projeto](#como-rodar-o-projeto)
+2. [Modelagem](#modelagem)
+3. [Decisões técnicas](#decisões-técnicas)
+4. [Melhorias futuras](#melhorias-futuras)
+
+## Como rodar o projeto
 1. Fazer o clone do projeto
 ```shell
 git clone https://github.com/Leonardobern10/backend_pilops
@@ -107,3 +129,10 @@ O projeto do back-end ainda é muito simples, embora funcional, logo uma abordag
    |-- config/
      |-- db.ts // Conexão com o banco de dados
 ```
+
+## Melhorias futuras
+
+1. Utilização de POO para projeto com complexidade aumentada.
+2. Separação de responsabilidades mais forte, com forte aplicação de SRP junto com POO
+3. Adição de testes de integração.
+4. Utilização de ZOD para validações mais robustas.
