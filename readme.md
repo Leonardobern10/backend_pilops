@@ -136,3 +136,4 @@ O projeto do back-end ainda é muito simples, embora funcional, logo uma abordag
 2. Separação de responsabilidades mais forte, com forte aplicação de SRP junto com POO
 3. Adição de testes de integração.
 4. Utilização de ZOD para validações mais robustas.
+5. Adição de diagramas de sequência e de todas as classes e interfaces, não apenas as principais.
