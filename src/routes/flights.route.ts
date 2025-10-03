@@ -44,7 +44,6 @@ flightRouter.get('/', async (req: Request, res: Response) => {
 flightRouter.get(
     '/score',
     async (req: Request, res: Response): Promise<Response> => {
-        console.log('Rota /score acionada');
         try {
             let score = await getScore();
             return res.status(200).json({ ...score });
