@@ -29,7 +29,7 @@ const maxValue = (flights: FlightInterface[]): FlightInterface => {
 
 const minValue = (flights: FlightInterface[]): FlightInterface => {
     let min = flights[0];
-    flights.filter((el) =>
+    flights.forEach((el) =>
         el.flightData.balance < min.flightData.balance ? (min = el) : ''
     );
     return min;
