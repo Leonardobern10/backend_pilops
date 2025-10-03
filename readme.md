@@ -3,6 +3,67 @@ Esse proejeto consiste no backend da aplicação correspondente ao desafio propo
 
 Aqui estarão, além da disponibilização do próprio backend em si, algumas das decisões técnicas tomadas durante a codificação do projeto.
 
+## Como inicar o projeto
+1. Fazer o clone do projeto
+```shell
+git clone https://github.com/Leonardobern10/backend_pilops
+```
+
+2. Entrar na pasta principal
+```shell
+cd backend_pilops
+```
+
+3. Instalar as dependências 
+```shell
+npm install
+```
+
+4. Definir as variáveis de ambiente
+```shell
+PORT=3000
+CLIENT_URL=http://localhost:5173
+BASE_URL=/
+```
+
+5. Executar a aplicação
+```shell
+npm run dev
+```
+
+**Aqui a aplicação roda em Typescript, para compilar e rodar em JS**
+
+6. Executar build e iniciar Javascript
+```shell
+npm run build
+npm run start
+```
+
+7. Executar os testes
+
+*caso queira executar os testes unitários*
+
+```shell
+npm run test
+```
+
+**O servidor será iniciado em http://localhost:3000/**
+
+Assim, o frontend conseguirá se conectar e consumir os dados.
+
+## Modelagem
+### Classes
+![Diagrama de classes](public/image.png)
+
+### Historico
+![Diagrama de atividades - Histórico](public/image-1.png)
+
+### Detalhes
+![Diagrama de atividades - Detalhes](public/image-2.png)
+
+### Pontuação
+![Diagrama de atividades - Pontuação](public/image-3.png)
+
 ## Decisões técnicas
 ### Porque expressjs?
 O express é um framework para geração de servidor com node. Ele ao mesmo tempo que é minimalista também traz consigo robustez, principalmente na criação de middlewares.
